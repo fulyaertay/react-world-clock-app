@@ -7,8 +7,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" exact element={<Cities ></Cities>}></Route>
-          <Route path="/region/:place" element={<Clock></Clock> }></Route>
+          <Route path="/" exact element={<Cities/>}></Route>
+          <Route path="/:region/:place" element={<Clock/> }></Route>
         </Routes>
       </div>
     </Router>

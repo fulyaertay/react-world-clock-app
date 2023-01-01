@@ -2,18 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 export default function Clock({ match }) {
   const [clock, setClock] = useState("");
   const [week, setWeek] = useState("");
   const [day, setDay] = useState("");
+  const { region,place } = useParams();
   useEffect(() => {
-    getClock();
-  }, []);
-
-  const getClock = () => {
-    axios
-      .get(
-        `http://worldtimeapi.org/api/timezone/${match.params.region}/${match.params.place}`
+    axios.get(
+        `http://worldtimeapi.org/api/timezone/${region}/${place}`
       )
       .then((res) => {
         //console.log(res.data);
@@ -21,7 +18,9 @@ export default function Clock({ match }) {
         setWeek(res.data.week_number);
         setDay(res.data.day_of_year);
       });
-  };
+  }, [region,place]);
+
+
   return (
     <div className="container">
       <div className="card">
@@ -32,7 +31,7 @@ export default function Clock({ match }) {
           >
             <i className="material-icons">undo</i>
           </Link>
-          <h4 className="center teal-text darken-4 ">{match.params.place}</h4>
+          <h4 className="center teal-text darken-4 ">{place}</h4>
           <h1 className="center teal-text darken-3 ">
             {moment(clock).format("LLLL")}
           </h1>
