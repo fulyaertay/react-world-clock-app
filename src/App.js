@@ -9,7 +9,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Cities}></Route>
-          <Route path="/:id" component={Clock}></Route>
+          <Route path="/:region/:place" component={Clock}></Route>
         </Switch>
         <Cities></Cities>
   

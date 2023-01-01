@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default function Cities() {
   const [cities, setCities] = useState([]);
   const [tempCities, tempSetCities] = useState(null);
@@ -50,22 +51,26 @@ export default function Cities() {
       <div className="row">
         {tempCities != null
           ? tempCities.map((s) => (
-              <div className="col l3 m4 s6" key={s}>
-                <div className="card blue-grey darken-1">
-                  <div className="card-content white-text">
-                    <p>{s}</p>
+              <Link key={s} to={`/${s}`}>
+                <div className="col l3 m4 s6">
+                  <div className="card blue-grey darken-1">
+                    <div className="card-content white-text">
+                      <p>{s}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))
           : cities.map((s) => (
-              <div className="col l3 m4 s6" key={s}>
-                <div className="card blue-grey darken-1">
-                  <div className="card-content white-text">
-                    <p>{s}</p>
+              <Link key={s} to={`/${s}`}>
+                <div className="col l3 m4 s6">
+                  <div className="card blue-grey darken-1">
+                    <div className="card-content white-text">
+                      <p>{s}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
       </div>
     </div>
