@@ -1,3 +1,38 @@
+## Project: World Clock App
+
+
+## Animation of the App
+
+![image](./world-clock.gif)
+
+## Visulation of the City List
+
+![image](./world-clock.png)
+
+## Visulation of the City Clock
+
+![image](./world-clock-city.png)
+
+
+## Description
+```bash
+- User can list all cities in the world
+- User can filter any city to see current date/time
+- User can return listing cities page 
+```
+
+## Overview
+I mastered HTML, CSS, JavaScript, Materialize CSS and React features in this project. You can see the visual representation of the app above.
+
+## Technologies 💻
+```bash
+- React(useState,useEffect,Components,React Router)
+- JavaScript
+- HTML/CSS
+- Materialize CSS
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
