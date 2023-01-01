@@ -7,19 +7,17 @@ export default function Clock({ match }) {
   const [clock, setClock] = useState("");
   const [week, setWeek] = useState("");
   const [day, setDay] = useState("");
-  const { region,place } = useParams();
+  const { region, place } = useParams();
   useEffect(() => {
-    axios.get(
-        `http://worldtimeapi.org/api/timezone/${region}/${place}`
-      )
+    axios
+      .get(`http://worldtimeapi.org/api/timezone/${region}/${place}`)
       .then((res) => {
         //console.log(res.data);
         setClock(res.data.datetime);
         setWeek(res.data.week_number);
         setDay(res.data.day_of_year);
       });
-  }, [region,place]);
-
+  }, [region, place]);
 
   return (
     <div className="container">
