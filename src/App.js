@@ -5,16 +5,17 @@ import Clock from './components/clock';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 function App() {
   return (
+    <div className="App">
     <Router>
-      <div className="App">
+
         <Switch>
           <Route path="/" exact component={Cities}></Route>
           <Route path="/:region/:place" component={Clock}></Route>
         </Switch>
-        <Cities></Cities>
   
-    </div>
+
     </Router>
+    </div>
 
   );
 }
